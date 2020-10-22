@@ -9,3 +9,4 @@ export * from './Counter';
 export * from './ArrowButton';
 export * from './Navigation';
 export * from './CardButton';
+export * from './CloseButton';

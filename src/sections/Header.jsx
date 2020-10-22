@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
-import { Box, Logo } from '../components';
-import { CloseIcon } from '../icons';
+import { Box, Logo, CloseButton } from '../components';
 
 const StyledHeader = styled(Box)`
   display: flex;
@@ -20,6 +19,6 @@ const StyledHeader = styled(Box)`
 export const Header = (props) => (
   <StyledHeader as="header" {...props}>
     <Logo />
-    <CloseIcon />
+    <CloseButton onClick={() => console.log('close button clicked!')} />
   </StyledHeader>
 );
