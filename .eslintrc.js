@@ -1,17 +1,37 @@
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
-  plugins: ['prettier'],
-  env: {
-    browser: true,
-    commonjs: true,
-    node: true,
-    es6: true,
-  },
+  extends: [
+    'react-app',
+    'plugin:jsx-a11y/recommended',
+    'prettier/react',
+    'prettier/babel',
+    'plugin:prettier/recommended',
+  ],
+  plugins: ['prettier', 'jsx-a11y'],
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
   },
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'warn',
+    'import/order': [
+      'error',
+      {
+        'newlines-between': 'always',
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+        ],
+      },
+    ],
   },
 };

@@ -1,11 +1,11 @@
 import React from 'react';
-
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
+import { UmbrellaIcon } from '../icons';
+
 import { Box } from './Box';
 import { Text } from './Text';
-import { UmbrellaIcon } from '../icons';
 
 const LogoWrapper = styled(Box)`
   display: flex;

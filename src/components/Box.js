@@ -12,7 +12,6 @@ import {
   typography,
 } from 'styled-system';
 
-
 const styledSystemAbilities = compose(
   background,
   border,
@@ -24,7 +23,6 @@ const styledSystemAbilities = compose(
   position,
   typography,
 );
-
 
 const Box = styled.div`
   ${styledSystemAbilities};

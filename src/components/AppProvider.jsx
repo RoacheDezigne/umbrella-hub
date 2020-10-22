@@ -1,6 +1,6 @@
-import React from "react";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { normalize } from "polished";
+import React from 'react';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { normalize } from 'polished';
 
 const GlobalStyle = createGlobalStyle`
   ${normalize()}

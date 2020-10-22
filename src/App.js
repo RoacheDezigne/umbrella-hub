@@ -1,18 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import { AppProvider } from './components';
 import { theme } from './tokens';
 import { Header } from './Header';
-import { Content } from './Content';
+import { Content } from './Content/Content';
 import { Footer } from './Footer';
 import { PageProvider } from './PageContext';
 
 const App = () => {
-  const [currentPageNum] = useState(2);
+  const [pageIndex, setPageIndex] = useState(0);
+  const refArray = useRef([]);
+
+  const changePage = (newPageIndex) => {
+    if (newPageIndex < 0 || newPageIndex > 6) return;
+
+    setPageIndex(newPageIndex);
+    refArray.current[newPageIndex].scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  };
 
   return (
     <AppProvider theme={theme}>
-      <PageProvider pageNumber={currentPageNum}>
+      <PageProvider
+        setPageIndex={changePage}
+        pageIndex={pageIndex}
+        refArray={refArray.current}
+      >
         <Header />
         <Content />
         <Footer />

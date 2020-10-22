@@ -1,29 +1,21 @@
-import React from "react";
-import styled from "styled-components";
+import React, { forwardRef } from 'react';
+import styled from 'styled-components';
 
-import { Box } from "./Box";
-import { PageTitle } from "./PageTitle";
+import { Box } from './Box';
+import { PageTitle } from './PageTitle';
 
 const StyledPage = styled(Box)`
-  display: flex;
-  padding: 36px 30px;
+  min-height: calc(100% - 200px);
+  padding: 15px 31px;
+  align-items: flex-start;
+  opacity: ${({ isCurrentPage }) => (isCurrentPage ? '1' : '0.3')};
 `;
 
-const pageContents = [
-    {
-        title: "What type of insurance are you looking for?"
-    },
-    {
-        title: "What's the name of your business?"
-    }
-];
-
-export const Page = ({number, ...props}) => {
-    const pageContent = pageContents[number-1];
-    
-    return (
-        <StyledPage {...props}>
-            <PageTitle number={number} {...pageContent} />
-        </StyledPage>
-    );
-};
+export const Page = forwardRef(
+  ({ title, number, children, isCurrentPage = false, ...props }, ref) => (
+    <StyledPage isCurrentPage={isCurrentPage} ref={ref} {...props}>
+      <PageTitle number={number} title={title} />
+      {children}
+    </StyledPage>
+  ),
+);

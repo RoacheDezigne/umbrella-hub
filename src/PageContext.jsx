@@ -1,20 +1,27 @@
 import React, { useContext } from 'react';
 
 const PageContext = React.createContext({
-  pageNumber: `pageModes.wide`,
+  pageIndex: 0,
+  setPageIndex: () => {},
+  refArray: [],
 });
 
-const PageProvider = ({ pageNumber = 1, children }) => (
-  <PageContext.Provider value={{ pageNumber }}>
+const PageProvider = ({
+  pageIndex = 0,
+  setPageIndex = () => {},
+  refArray = [],
+  children,
+}) => (
+  <PageContext.Provider value={{ pageIndex, setPageIndex, refArray }}>
     {children}
   </PageContext.Provider>
 );
 
 const usePageContext = () => useContext(PageContext);
 
-const withPage = (ComponentToCompose) => (props) => {
-  const pageContextValue = usePageContext();
-  return <ComponentToCompose {...pageContextValue} {...props} />;
-};
+// const withPageContext = (ComponentToCompose) => (props) => {
+//   const pageContextValue = usePageContext();
+//   return <ComponentToCompose {...pageContextValue} {...props} />;
+// };
 
-export { PageProvider, usePageContext, withPage };
+export { PageProvider, usePageContext };
