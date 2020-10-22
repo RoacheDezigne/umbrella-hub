@@ -7,14 +7,13 @@ import { usePageContext } from '../helpers/PageContext';
 import { PageOne, PageTwo } from './pages';
 
 const StyledContent = styled(Box)`
-  display: flex;
   width: 100%;
-  flex-wrap: wrap;
   align-items: stretch;
   height: 100%;
   overflow: hidden;
   position: absolute;
   padding: 96px 0;
+  max-width: 800px;
 `;
 
 export const Content = ({ ...props }) => {
