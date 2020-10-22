@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import { Page } from '../../components';
+import { Page } from '../../../components';
 
 export const PageTwo = forwardRef(({ isCurrentPage, ...props }, ref) => (
   <Page

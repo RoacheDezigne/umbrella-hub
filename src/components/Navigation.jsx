@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { usePageContext } from '../PageContext';
+import { usePageContext } from '../sections/helpers/PageContext';
 
 import { Box } from './Box';
 import { ArrowButton } from './ArrowButton';

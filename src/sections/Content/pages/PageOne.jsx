@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
 
-import { CardButton, Page } from '../../components';
+import { CardButton, Page } from '../../../components';
 import {
   BriefcaseIcon,
   RainCloudIcon,
   PackageIcon,
   WifiIcon,
-} from '../../icons';
+} from '../../../icons';
 
 export const PageOne = forwardRef(({ isCurrentPage, ...props }, ref) => (
   <Page

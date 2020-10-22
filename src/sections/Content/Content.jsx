@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Box, Page } from '../components';
-import { usePageContext } from '../PageContext';
+import { Box, Page } from '../../components';
+import { usePageContext } from '../helpers/PageContext';
 
 import { PageOne, PageTwo } from './pages';
 

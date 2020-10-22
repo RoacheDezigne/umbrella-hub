@@ -1,11 +1,9 @@
 import React, { useState, useRef } from 'react';
 
 import { AppProvider } from './components';
-import { theme } from './tokens';
-import { Header } from './Header';
-import { Content } from './Content/Content';
-import { Footer } from './Footer';
-import { PageProvider } from './PageContext';
+import { theme } from './theme';
+import { Header, Content, Footer } from './sections/';
+import { PageProvider } from './sections/helpers/PageContext';
 
 const App = () => {
   const [pageIndex, setPageIndex] = useState(0);

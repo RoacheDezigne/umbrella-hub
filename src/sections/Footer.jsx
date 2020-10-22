@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 
-import { Box, Counter, Navigation } from './components';
-import { usePageContext } from './PageContext';
+import { Box, Counter, Navigation } from '../components';
+
+import { usePageContext } from './helpers/PageContext';
 
 const StyledFooter = styled(Box)`
   display: flex;
