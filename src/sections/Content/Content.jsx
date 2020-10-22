@@ -7,20 +7,18 @@ import { usePageContext } from '../helpers/PageContext';
 import { PageOne, PageTwo } from './pages';
 
 const StyledContent = styled(Box)`
-  width: 100%;
   align-items: stretch;
   height: 100%;
   overflow: hidden;
   position: absolute;
   padding: 96px 0;
-  max-width: 800px;
 `;
 
 export const Content = ({ ...props }) => {
   const { pageIndex, refArray } = usePageContext();
 
   return (
-    <StyledContent {...props}>
+    <StyledContent {...props} width={[1, 1, 1, 1, 1 / 2]}>
       <PageOne
         ref={(el) => {
           refArray[0] = el;
